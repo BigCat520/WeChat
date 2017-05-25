@@ -1,6 +1,9 @@
 package com.example.asus.wetchat;
 
 import android.graphics.Color;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,6 +25,8 @@ public class ChatActivity extends AppCompatActivity {
     private Button send;
     private RecyclerView msgRecyclerView;
     private MsgAdapter adapter;
+    private DrawerLayout mDrawerLayout;
+    private NavigationView navView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,8 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navView = (NavigationView) findViewById(R.id.nav_view);
         initMsgs();
         inputText = (EditText) findViewById(R.id.input_text);
         send = (Button) findViewById(R.id.send);
@@ -47,6 +54,10 @@ public class ChatActivity extends AppCompatActivity {
                 inputText.setText("");
             }
         });
+        navView.setNavigationItemSelectedListener(v -> {
+            mDrawerLayout.closeDrawers();
+            return true;
+        });
     }
 
     public boolean onCreateOptionsMenu (Menu menu) {
@@ -58,7 +69,7 @@ public class ChatActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.information:
-                Toast.makeText(this, "You clicked information", Toast.LENGTH_SHORT).show();
+                mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
             default:
         }
