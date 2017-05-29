@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -17,15 +18,15 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
     private List<Msg> mMsgList;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        LinearLayout leftLayout;
-        LinearLayout rightLayout;
+        RelativeLayout leftLayout;
+        RelativeLayout rightLayout;
         TextView leftMsg;
         TextView rightMsg;
 
         public ViewHolder(View view){
             super(view);
-            leftLayout = (LinearLayout) view.findViewById(R.id.left_layout);
-            rightLayout = (LinearLayout) view.findViewById(R.id.right_layout);
+            leftLayout = (RelativeLayout) view.findViewById(R.id.left_layout);
+            rightLayout = (RelativeLayout) view.findViewById(R.id.right_layout);
             leftMsg = (TextView) view.findViewById(R.id.left_msg);
             rightMsg = (TextView) view.findViewById(R.id.right_msg);
         }

@@ -10,40 +10,35 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:background="@drawable/background04">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="43dp"
                 android:background="#333133"
+                app:title="@string/toolbar_name"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/msg_recycler_view"
                 android:layout_width="match_parent"
-                android:background="@drawable/background04"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
-        </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#ffff">
 
             <EditText
                 android:id = "@+id/input_text"
                 android:layout_width="0dp"
                 android:layout_height="32dp"
                 android:layout_weight="1"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:layout_marginLeft="6dp"
                 android:layout_marginTop="2.3dp"
                 android:layout_marginBottom="2.3dp"

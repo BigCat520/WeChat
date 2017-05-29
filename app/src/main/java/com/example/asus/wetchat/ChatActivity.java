@@ -1,6 +1,5 @@
 package com.example.asus.wetchat;
 
-import android.graphics.Color;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,11 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,11 +73,11 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void initMsgs(){
-        Msg msg1 = new Msg("Hello.My friend", Msg.TYPE_RECEIVED);
+        Msg msg1 = new Msg("Where is my cat?", Msg.TYPE_RECEIVED);
         msgList.add(msg1);
-        Msg msg2 = new Msg("Hello.Who is that?", Msg.TYPE_SEND);
+        Msg msg2 = new Msg("I'm here~", Msg.TYPE_SEND);
         msgList.add(msg2);
-        Msg msg3 = new Msg("This is Tom.\n"+"Nice talking to you." ,Msg.TYPE_RECEIVED);
+        Msg msg3 = new Msg("Your Baby is ready.\n"+"Let's go to lang~." ,Msg.TYPE_RECEIVED);
         msgList.add(msg3);
     }
 }
