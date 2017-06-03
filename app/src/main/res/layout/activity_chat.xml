@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background04">
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription"
+        android:src="@drawable/background04"
+        android:adjustViewBounds="false"/>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -28,38 +39,43 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ffff">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffff">
 
-            <EditText
-                android:id = "@+id/input_text"
-                android:layout_width="0dp"
-                android:layout_height="32dp"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="2.3dp"
-                android:layout_marginBottom="2.3dp"
-                android:background="@drawable/edit_bg"
-                android:maxLines="2"
-                tools:ignore="RtlHardcoded,TextFields" />
+                <EditText
+                    android:id = "@+id/input_text"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="2.3dp"
+                    android:layout_marginBottom="2.3dp"
+                    android:background="@drawable/edit_bg"
+                    android:maxLines="2"
+                    tools:ignore="RtlHardcoded,TextFields" />
 
-            <Button
-                android:id="@+id/send"
-                android:layout_width="65dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="1.5dp"
-                android:background="@drawable/send"/>
+                <Button
+                    android:id="@+id/send"
+                    android:layout_width="65dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="1.5dp"
+                    android:background="@drawable/send"/>
+
+            </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:menu="@menu/nav_menu"
-        app:headerLayout="@layout/nav_header"/>
-</android.support.v4.widget.DrawerLayout>
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/nav_menu"
+            app:headerLayout="@layout/nav_header"/>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</FrameLayout>
