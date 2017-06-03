@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">WeChat</string>
+    <string name="background">This is background of chating layout</string>
     <string name="toolbar_name">My Angel</string>
 </resources>
